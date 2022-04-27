@@ -1,7 +1,7 @@
 import json
 import typing as t
 
-from lespy.http.base import ResponseBase
+from lespy.http.response.base import ResponseBase
 
 
 class Response(ResponseBase):
