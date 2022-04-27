@@ -12,6 +12,7 @@
 .mypy_cache
 venv/
 dist/
+build/
 env
 replit.nix
 replit_zip_error_log.txt
