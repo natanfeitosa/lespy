@@ -11,6 +11,7 @@
 .pytest_cache
 .mypy_cache
 venv/
+dist/
 env
 replit.nix
 replit_zip_error_log.txt
