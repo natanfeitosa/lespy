@@ -1,0 +1,29 @@
+site_name: Lespy
+site_description: A small and robust micro Python framework for building simple and solid web applications
+site_author: Natan Santos
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: green
+      accent: amber
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+    - scheme: slate
+      primary: green
+      accent: amber
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+  - admonition
+  - toc:
+      permalink: True
+
+dev_addr: "0.0.0.0:3000"

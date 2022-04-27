@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "Lespy"
+license = "MIT"
+version = "0.1.0"
+authors = ["Natan Santos <natansantosapps@gmail.com>"]
+description = "A small and robust micro Python framework for building simple and solid web apps."
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyfunctools = "^0.5.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+mypy = "^0.942"
+mkdocs = {extras = ["i18n"], version = "^1.3.0"}
+mkdocs-material = "^8.2.9"
+ipython = "^8.2.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
