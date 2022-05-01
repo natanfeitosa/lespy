@@ -1,11 +1,12 @@
 # LESPY
 
-[![GitHub stars](https://img.shields.io/github/stars/natanfeitosa/lespy)](https://github.com/natanfeitosa/lespy/stargazers)
-[![GitHub license](https://img.shields.io/github/license/natanfeitosa/lespy)](https://github.com/natanfeitosa/lespy/blob/main/LICENSE)
-[![PyPI version](https://badge.fury.io/py/lespy.svg)](https://badge.fury.io/py/lespy)
+[![GitHub stars](https://img.shields.io/github/stars/natanfeitosa/lespy.svg)](https://github.com/natanfeitosa/lespy/stargazers)
+[![Pytest Actions Status](https://github.com/natanfeitosa/lespy/actions/workflows/pytest.yml/badge.svg)](https://github.com/natanfeitosa/lespy/actions)
+[![GitHub license](https://img.shields.io/github/license/natanfeitosa/lespy.svg)](https://github.com/natanfeitosa/lespy/blob/main/LICENSE)
+![PyPI](https://img.shields.io/pypi/v/lespy.svg)
 [![PyPI download month](https://img.shields.io/pypi/dm/lespy.svg)](https://pypi.org/project/lespy/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/lespy.svg)](https://pypi.python.org/pypi/lespy/)
-![PyPI - Wheel](https://img.shields.io/pypi/wheel/lespy)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/lespy.svg)
 
 ## Overview 
 A small and robust micro Python framework for building simple and solid web apps.
