@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "Lespy"
 license = "MIT"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Natan Santos <natansantosapps@gmail.com>"]
 description = "A small and robust micro Python framework for building simple and solid web apps."
 
