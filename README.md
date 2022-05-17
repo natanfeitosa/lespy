@@ -3,7 +3,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/natanfeitosa/lespy.svg)](https://github.com/natanfeitosa/lespy/stargazers)
 [![Pytest Actions Status](https://github.com/natanfeitosa/lespy/actions/workflows/pytest.yml/badge.svg)](https://github.com/natanfeitosa/lespy/actions)
 [![GitHub license](https://img.shields.io/github/license/natanfeitosa/lespy.svg)](https://github.com/natanfeitosa/lespy/blob/main/LICENSE)
-![PyPI](https://img.shields.io/pypi/v/lespy.svg)
+[![PyPI](https://img.shields.io/pypi/v/lespy.svg)](https://pypi.org/project/lespy)
 [![PyPI download month](https://img.shields.io/pypi/dm/lespy.svg)](https://pypi.org/project/lespy/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/lespy.svg)](https://pypi.python.org/pypi/lespy/)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/lespy.svg)
