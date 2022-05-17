@@ -7,6 +7,7 @@
 [![PyPI download month](https://img.shields.io/pypi/dm/lespy.svg)](https://pypi.org/project/lespy/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/lespy.svg)](https://pypi.python.org/pypi/lespy/)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/lespy.svg)
+[![Open Source Helpers](https://www.codetriage.com/natanfeitosa/lespy/badges/users.svg)](https://www.codetriage.com/natanfeitosa/lespy)
 
 ## Overview 
 A small and robust micro Python framework for building simple and solid web apps.
