@@ -1,6 +1,6 @@
-[tool.poetry]
+[project]
 name = "Lespy"
-license = "MIT"
+license-files = ["LICEN[CS]E*"]
 version = "0.1.1"
 authors = ["Natan Santos <natansantosapps@gmail.com>"]
 description = "A small and robust micro Python framework for building simple and solid web apps."
