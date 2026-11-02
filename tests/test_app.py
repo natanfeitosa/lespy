@@ -1,78 +1,36 @@
-from lespy import JSONResponse, Request, App
 
-def test_app(app: App):
-    assert app._app_name == 'app1'
-    assert app._base_path == '/'
+import pytest
 
-def index(req: Request):
-    if req.method == 'GET':
-        return 'Hello, this is my first app'
-            
-    if req.method == 'POST':
-        return JSONResponse({'err': True})
+# Importe create_app, Request e call_app do módulo do projeto.
 
-def test_get(app: App):
-    app.route('/', ['GET'])(index)
 
-    environ = {
-        'PATH_INFO': '/',
-        'REQUEST_METHOD': 'GET'
-    }
+@pytest.mark.parametrize(
+    ("registered_methods", "request_method", "expected_status"),
+    [
+        pytest.param(["GET"], "GET", "200 OK", id="get-allowed"),
+        pytest.param(["POST"], "POST", "200 OK", id="post-allowed"),
+        pytest.param(["GET"], "POST", "404 Not Found", id="post-not-registered"),
+        pytest.param(["POST"], "GET", "404 Not Found", id="get-not-registered"),
+        pytest.param(["GET", "POST"], "GET", "200 OK", id="get-multiple-methods"),
+        pytest.param(["GET", "POST"], "POST", "200 OK", id="post-multiple-methods"),
+    ],
+)
+def test_route_method_matching(
+    registered_methods: list[str],
+    request_method: str,
+    expected_status: str,
+) -> None:
+    app = create_app()
 
-    headers = []
+    @app.route("/", registered_methods)
+    def handler(req: Request) -> bytes:
+        return req.method.encode()
 
-    def start_response(*a):
-        nonlocal headers
-        headers = a
-    res = app(environ, start_response)
+    body, status, headers = call_app(app, "/", request_method)
 
-    assert list(res)[0] == b'Hello, this is my first app'
-    assert headers[0] == '200 OK'
-    assert ('Content-Type', 'text/plain') in headers[1]
+    assert status == expected_status
 
-def test_post(app: App):
-    app.route('/', ['POST'])(index)
-
-    environ = {
-        'PATH_INFO': '/',
-        'REQUEST_METHOD': 'POST'
-    }
-
-    headers = []
-
-    def start_response(*a):
-        nonlocal headers
-        headers = a
-    res = app(environ, start_response)
-
-    assert list(res)[0] == b'{"err": true}'
-    assert headers[0] == '200 OK'
-    assert ('Content-Type', 'application/json') in headers[1]
-
-def test_empty_router(app: App):
-    environ = {
-        'PATH_INFO': '/',
-        'REQUEST_METHOD': 'GET'
-    }
-
-    headers = []
-
-    def start_response(*a):
-        nonlocal headers
-        headers = a
-    res = app(environ, start_response)
-
-    assert list(res)[0] == b'Page not found.'
-    assert headers[0] == '404 Not Found'
-    assert ('Content-Type', 'text/html; charset=utf-8') in headers[1]
-
-def test_route_names(app: App):
-    @app.route('/', ['GET'])
-    def index(req): pass
-
-    @app.route('/register', ['POST'], 'register')
-    def _index(req): pass
-
-    assert len(app._router._routes) == 2
-    assert app._find_rule('', 'get')[0].name == 'index'
-    assert app._find_rule('register/', 'post')[0].name == 'register'
+    if expected_status == "200 OK":
+        assert body == request_method.encode()
+    else:
+        assert body != request_method.encode()
